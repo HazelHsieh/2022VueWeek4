@@ -106,25 +106,25 @@
             this.userInfo.password = "";
           }
         },
-        async checkSignin() {
-          //  取得 Token（Token 僅需要設定一次）
-          //                                                   前面自定義名稱
-          const token = document.cookie.replace(/(?:(?:^|.*;\s*)hexToken\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-          // axios 登入抓住 token 
-          axios.defaults.headers.common['Authorization'] = token;
-          try {
-            await axios.post(`${url}/api/user/check`)
-            location.href = "./product.html";
-          }
-          // 失敗結果
-          catch (error) {
-            console.log(error.data.message);
-          }
-        }
+        // async checkSignin() {
+        //   //  取得 Token（Token 僅需要設定一次）
+        //   //                                                   前面自定義名稱
+        //   const token = document.cookie.replace(/(?:(?:^|.*;\s*)hexToken\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+        //   // axios 登入抓住 token 
+        //   axios.defaults.headers.common['Authorization'] = token;
+        //   try {
+        //     await axios.post(`${url}/api/user/check`)
+        //     location.href = "./product.html";
+        //   }
+        //   // 失敗結果
+        //   catch (error) {
+        //     console.log(error.data.message);
+        //   }
+        // }
       },
-      mounted() {
-        this.checkSignin();
-      },
+      // mounted() {
+      //   this.checkSignin();
+      // },
     };
     createApp(app).mount('#app');
 

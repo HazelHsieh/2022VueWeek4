@@ -25,7 +25,7 @@ const app = createApp({
           this.getData();
         })
         .catch((err) => {
-          alert(err.response.data.message)
+          alert(err.data.message)
           window.location = 'login.html';
         })
     },
@@ -55,7 +55,7 @@ const app = createApp({
         productModal.hide();
         this.getData();
       }).catch((err) => {
-        alert(err.response.data.message);
+        alert(err.data.message);
       })
     },
     openModal(isNew, item) {
